@@ -21,7 +21,7 @@ public class Movimiento : MonoBehaviour
     {
         float movHorizontal = Input.GetAxis("Horizontal");
         float movVertical = Input.GetAxis("Vertical");
-        Cuerpo.velocity = new Vector3(movHorizontal * Velocidad, Cuerpo.velocity.y ,movVertical * Velocidad);
+        Cuerpo.velocity = new Vector3(movHorizontal * Velocidad, Cuerpo.velocity.y, movVertical * Velocidad);
         Saltando = Input.GetButtonDown("Jump");
 
         if (Saltando)
@@ -35,6 +35,7 @@ public class Movimiento : MonoBehaviour
         if (other.gameObject.tag == "Monedas")
         {
             contador.recolectarMonedas();
+           
         }
     }
 }

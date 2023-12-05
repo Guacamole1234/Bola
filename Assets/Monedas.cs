@@ -11,18 +11,26 @@ public class Monedas : MonoBehaviour
         FX = GameObject.Find("FX").GetComponent<AudioSource>();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 
     private void OnTriggerEnter(Collider collision)
     {
         if (collision.gameObject.tag == "Personaje")
         {
             FX.Play();
-            Destroy(gameObject);
+          
+            ParticleSystem particulas =
+             gameObject.GetComponent<ParticleSystem>();
+            particulas.Play();
+            Invoke("destruirObjeto", particulas.duration);
+           
         }
+        
     }
+
+    void destruirObjeto()
+    {
+            Destroy(gameObject);
+    }
+
+
 }
