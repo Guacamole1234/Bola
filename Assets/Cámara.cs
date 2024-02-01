@@ -13,6 +13,6 @@ public class Cámara : MonoBehaviour
 
     void Update()
     {
-        transform.position = Vector3.Lerp(transform.position, objetivo.position, velocidad * Time.deltaTime);
+        transform.position = Vector3.Lerp(transform.position, new Vector3(objetivo.position.x,objetivo.position.y+1, objetivo.position.z-1.5f), velocidad * Time.deltaTime);
     }
 }
